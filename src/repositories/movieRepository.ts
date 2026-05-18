@@ -11,7 +11,6 @@ const api = axios.create({
 
 export const movieRepository = {
   getAll: async (): Promise<Movie[]> => {
-    console.log(BASE_URL)
     const { data } = await api.get('/')
     return z.array(MovieSchema).parse(data)
   },
