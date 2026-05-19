@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './components/Home'
-import Create from './components/Create'
-import Read from './components/Read'
-import Update from './components/Update'
-import Delete from './components/Delete'
+import Home from './pages/Home'
+import Create from './pages/Create'
+import Read from './pages/Read'
+import Update from './pages/Update'
+import Delete from './pages/Delete'
 import './styles/App.css'
 
 function App() {
@@ -12,9 +12,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/criar' element={<Create />} />
-        <Route path='/visualizar' element={<Read />} />
+        <Route path='/ler/:id' element={<Read />} />
         <Route path='/alterar' element={<Update />} />
-        <Route path='/remover' element={<Delete />} />
+        <Route path='/apagar' element={<Delete />} />
       </Routes>
     </BrowserRouter>
   )

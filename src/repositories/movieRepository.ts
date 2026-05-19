@@ -1,13 +1,12 @@
 import axios from "axios"
 import { MovieSchema, type CreateMovieDTO, type Movie, type UpdateMovieDTO } from "../models/Movie"
-import z from "zod"
+import { z } from "zod"
 
 const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/movies`
 
 const api = axios.create({
   baseURL: BASE_URL
 })
-
 
 export const movieRepository = {
   getAll: async (): Promise<Movie[]> => {
