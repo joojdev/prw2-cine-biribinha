@@ -78,7 +78,9 @@ nav ul li a {
   font-weight: 500;
   color: var(--color-text-secondary);
   border-radius: var(--radius-sm);
-  transition: color 0.15s ease, background-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
 }
 
 nav ul li a:hover {
@@ -229,7 +231,9 @@ tbody td:first-child {
   color: var(--color-text-primary);
   font-family: var(--font-sans);
   font-size: 0.9375rem;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
   outline: none;
 }
 
@@ -250,7 +254,9 @@ tbody td:first-child {
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.15s ease, transform 0.1s ease;
+  transition:
+    background-color 0.15s ease,
+    transform 0.1s ease;
 }
 
 .btn:active {

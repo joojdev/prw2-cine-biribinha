@@ -1,7 +1,7 @@
-import type { ReactNode } from "react"
-import NavBar from "@components/NavBar"
+import type { ReactNode } from 'react'
+import NavBar from '@components/NavBar'
 
-function PageLayout({ children, title }: { children?: ReactNode, title?: string }) {
+function PageLayout({ children, title }: { children?: ReactNode; title?: string }) {
   return (
     <div className="page-root">
       <header>
@@ -15,9 +15,7 @@ function PageLayout({ children, title }: { children?: ReactNode, title?: string 
         )}
         {children}
       </section>
-      <footer>
-        &copy; Cine Biribinha 2026
-      </footer>
+      <footer>&copy; Cine Biribinha 2026</footer>
     </div>
   )
 }

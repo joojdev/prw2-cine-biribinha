@@ -1,5 +1,10 @@
-import { CreateMovieSchema, UpdateMovieSchema, type CreateMovieDTO, type UpdateMovieDTO } from "../models/Movie";
-import { movieRepository } from "../repositories/movieRepository";
+import {
+  CreateMovieSchema,
+  UpdateMovieSchema,
+  type CreateMovieDTO,
+  type UpdateMovieDTO,
+} from '../models/Movie'
+import { movieRepository } from '../repositories/movieRepository'
 
 export const movieService = {
   getAll: () => movieRepository.getAll(),
@@ -12,5 +17,5 @@ export const movieService = {
     UpdateMovieSchema.parse(dto)
     return movieRepository.update(id, dto)
   },
-  delete: (id: string) => movieRepository.delete(id)
+  delete: (id: string) => movieRepository.delete(id),
 }

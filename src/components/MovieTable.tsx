@@ -1,5 +1,5 @@
-import type { Movie } from "@/models/Movie";
-import MovieRow from "./MovieRow";
+import type { Movie } from '@/models/Movie'
+import MovieRow from './MovieRow'
 
 function MovieTable({ movies }: { movies: Movie[] }) {
   if (movies.length === 0) {

@@ -1,9 +1,7 @@
-import PageLayout from "@/components/PageLayout"
+import PageLayout from '@/components/PageLayout'
 
 function Create() {
-  return (
-    <PageLayout title="Criar"></PageLayout>
-  )
+  return <PageLayout title="Criar"></PageLayout>
 }
 
 export default Create

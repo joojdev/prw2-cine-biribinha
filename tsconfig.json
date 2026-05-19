@@ -10,30 +10,15 @@
   ],
   "compilerOptions": {
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@models/*": [
-        "./src/models/*"
-      ],
-      "@pages/*": [
-        "./src/pages/*"
-      ],
-      "@repositories/*": [
-        "./src/repositories/*"
-      ],
-      "@services/*": [
-        "./src/services/*"
-      ],
-      "@styles/*": [
-        "./src/styles/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
-      ]
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@models/*": ["./src/models/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@repositories/*": ["./src/repositories/*"],
+      "@services/*": ["./src/services/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@contexts/*": ["./src/contexts/*"]
     }
   }
 }

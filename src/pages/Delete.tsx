@@ -1,4 +1,4 @@
-import PageLayout from "@/components/PageLayout"
+import PageLayout from '@/components/PageLayout'
 
 function Delete() {
   return <PageLayout title="Apagar"></PageLayout>
