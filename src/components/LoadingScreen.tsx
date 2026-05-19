@@ -1,5 +1,3 @@
-import "@styles/LoadingScreen.css"
-
 function LoadingScreen() {
   return (
     <div className="blackScreen">

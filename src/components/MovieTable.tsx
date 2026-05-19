@@ -2,22 +2,34 @@ import type { Movie } from "@/models/Movie";
 import MovieRow from "./MovieRow";
 
 function MovieTable({ movies }: { movies: Movie[] }) {
+  if (movies.length === 0) {
+    return (
+      <div className="table-wrapper">
+        <div className="empty-state">
+          <p>Nenhum filme encontrado.</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Gênero</th>
-          <th>Ano</th>
-        </tr>
-      </thead>
-      <tbody>
-        {movies.map((movie, index) => {
-          return <MovieRow key={index} movie={movie} />
-        })}
-      </tbody>
-    </table>
+    <div className="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Gênero</th>
+            <th>Ano</th>
+          </tr>
+        </thead>
+        <tbody>
+          {movies.map((movie, index) => (
+            <MovieRow key={index} movie={movie} />
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
