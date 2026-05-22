@@ -19,7 +19,18 @@ function Read() {
 function ReadPage({ id }: { id: string }) {
   const movie = useMovie(id)
 
-  return <PageLayout title="Ler">{movie?.name}</PageLayout>
+  return (
+    <PageLayout title="Ler" showReturn>
+      {movie && (
+        <>
+          <h2>{movie.name}</h2>
+          <p>Gênero: {movie.genre}</p>
+          <p>Ano: {movie.year}</p>
+          <p>ID: {movie.id}</p>
+        </>
+      )}
+    </PageLayout>
+  )
 }
 
 export default Read

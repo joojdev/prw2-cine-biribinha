@@ -19,8 +19,6 @@ function MovieTable({ movies }: { movies: Movie[] }) {
           <tr>
             <th>ID</th>
             <th>Nome</th>
-            <th>Gênero</th>
-            <th>Ano</th>
           </tr>
         </thead>
         <tbody>

@@ -25,7 +25,7 @@ export const movieRepository = {
   },
 
   update: async (id: string, dto: UpdateMovieDTO): Promise<Movie> => {
-    const { data } = await api.post(`/${id}`, dto)
+    const { data } = await api.put(`/${id}`, dto)
     return MovieSchema.parse(data)
   },
 

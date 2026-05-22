@@ -12,8 +12,6 @@ function MovieRow({ movie }: { movie: Movie }) {
     <tr onClick={handleClickMovie}>
       <td>{movie.id}</td>
       <td>{movie.name}</td>
-      <td>{movie.genre}</td>
-      <td>{movie.year}</td>
     </tr>
   )
 }
