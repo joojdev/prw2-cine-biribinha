@@ -8,22 +8,25 @@ import '@styles/App.css'
 import { useState } from 'react'
 import { LoadingContext } from '@contexts/LoadingContext'
 import LoadingScreen from '@components/LoadingScreen'
+import ToastProvider from './components/ToastProvider'
 
 function App() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   return (
     <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
-      {isLoading && <LoadingScreen />}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/criar" element={<Create />} />
-          <Route path="/ler/:id" element={<Read />} />
-          <Route path="/alterar" element={<Update />} />
-          <Route path="/apagar" element={<Delete />} />
-        </Routes>
-      </BrowserRouter>
+      <ToastProvider>
+        {isLoading && <LoadingScreen />}
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/criar" element={<Create />} />
+            <Route path="/ler/:id" element={<Read />} />
+            <Route path="/alterar" element={<Update />} />
+            <Route path="/apagar" element={<Delete />} />
+          </Routes>
+        </BrowserRouter>
+      </ToastProvider>
     </LoadingContext.Provider>
   )
 }

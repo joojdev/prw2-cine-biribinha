@@ -1,21 +1,14 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Input from '@/components/Input'
-import { useMovie } from '@/hooks/useMovie'
 import { movieService } from '@/services/movieService'
 import type { Movie } from '@/models/Movie'
 import { validateGenre, validateName, validateYear } from '@/utils/validation'
+import { useToast } from '@hooks/useToast'
 
-function MovieForm({ movieId }: { movieId?: string }) {
-  const data = useMovie(movieId)
-
-  if (movieId && !data) return null
-
-  return <MovieFormFields initial={data} movieId={movieId} />
-}
-
-function MovieFormFields({ initial, movieId }: { initial?: Movie; movieId?: string }) {
+function MovieForm({ initial, movieId }: { initial?: Movie; movieId?: string }) {
   const navigate = useNavigate()
+  const { showToast } = useToast()
   const [name, setName] = useState(initial?.name ?? '')
   const [genre, setGenre] = useState(initial?.genre ?? '')
   const [year, setYear] = useState(initial?.year ?? '')
@@ -29,20 +22,23 @@ function MovieFormFields({ initial, movieId }: { initial?: Movie; movieId?: stri
 
     const dto = { name, genre, year }
 
-    if (movieId) {
-      await movieService.update(movieId, dto)
-    } else {
-      await movieService.create(dto)
+    try {
+      if (movieId) {
+        await movieService.update(movieId, dto)
+      } else {
+        await movieService.create(dto)
+      }
+      navigate('/')
+    } catch {
+      showToast(movieId ? 'Erro ao atualizar filme.' : 'Erro ao criar filme.')
     }
-
-    navigate('/')
   }
 
   return (
     <form className="form-card" onSubmit={handleSubmit}>
       <Input label="Nome" value={name} setValue={setName} validate={validateName} />
       <Input label="Gênero" value={genre} setValue={setGenre} validate={validateGenre} />
-      <Input label="Ano" value={year} setValue={setYear} validate={validateYear} />
+      <Input isNumber label="Ano" value={year} setValue={setYear} validate={validateYear} />
       <button className="btn btn-primary" type="submit">
         {movieId ? 'Salvar' : 'Criar'}
       </button>

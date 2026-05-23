@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from 'react'
 import { LoadingContext } from '@contexts/LoadingContext'
 import { movieService } from '@services/movieService'
+import { useToast } from '@hooks/useToast'
 import type { Movie } from '@models/Movie'
 
 export function useMovie(id: string | undefined) {
   const { setIsLoading } = useContext(LoadingContext)
+  const { showToast } = useToast()
   const [movie, setMovie] = useState<Movie>()
 
   useEffect(() => {
@@ -14,11 +16,11 @@ export function useMovie(id: string | undefined) {
     movieService
       .getById(id)
       .then(setMovie)
-      .catch(console.error)
+      .catch(() => showToast('Erro ao carregar filme.'))
       .finally(() => setIsLoading(false))
 
     return () => setMovie(undefined)
-  }, [id, setIsLoading])
+  }, [id, setIsLoading, showToast])
 
   return movie
 }

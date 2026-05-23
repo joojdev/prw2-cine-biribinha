@@ -6,11 +6,13 @@ function Input({
   value,
   setValue,
   validate,
+  isNumber,
 }: {
   label: string
   value: string
   setValue: React.Dispatch<React.SetStateAction<string>>
   validate?: (value: string) => string | null
+  isNumber?: boolean
 }) {
   const [touched, setTouched] = useState(false)
   const error = validate && touched ? validate(value) : null
@@ -31,6 +33,7 @@ function Input({
         onBlur={() => setTouched(true)}
         required
         autoComplete="off"
+        type={isNumber ? 'number' : 'text'}
       />
       {error && <span className="form-error">{error}</span>}
     </div>

@@ -10,7 +10,7 @@ function Update() {
   return (
     <PageLayout title="Alterar" showReturn>
       {!movie && <SearchForm onSubmit={setMovie} />}
-      {movie && <MovieForm movieId={movie.id} />}
+      {movie && <MovieForm initial={movie} movieId={movie.id} />}
     </PageLayout>
   )
 }
