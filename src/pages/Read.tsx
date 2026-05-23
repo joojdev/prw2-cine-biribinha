@@ -19,6 +19,8 @@ function Read() {
 function ReadPage({ id }: { id: string }) {
   const movie = useMovie(id)
 
+  if (movie === null) return <Navigate to="/" />
+
   return (
     <PageLayout title="Ler" showReturn>
       {movie && (
