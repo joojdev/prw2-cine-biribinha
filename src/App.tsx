@@ -8,7 +8,8 @@ import '@styles/App.css'
 import { useState } from 'react'
 import { LoadingContext } from '@contexts/LoadingContext'
 import LoadingScreen from '@components/LoadingScreen'
-import ToastProvider from './components/ToastProvider'
+import ToastProvider from '@components/ToastProvider'
+import NotFound from '@pages/NotFound'
 
 function App() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -24,6 +25,7 @@ function App() {
             <Route path="/ler/:id" element={<Read />} />
             <Route path="/alterar" element={<Update />} />
             <Route path="/apagar" element={<Delete />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </ToastProvider>

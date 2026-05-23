@@ -316,6 +316,65 @@ tbody td:first-child {
   background-color: #b91c1c;
 }
 
+/* 404 Not Found */
+.not-found-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+  max-width: 480px;
+}
+
+.not-found-code {
+  font-family: var(--font-serif);
+  font-size: clamp(6rem, 18vw, 10rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-accent);
+  letter-spacing: -0.04em;
+  text-shadow: 4px 4px 0 var(--color-accent-light);
+}
+
+.not-found-film-strip {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.film-hole {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  border: 2px solid var(--color-border-light);
+}
+
+.not-found-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.not-found-message {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.not-found-btn {
+  margin-top: 0.5rem;
+}
+
 /* Toast */
 .toast-container {
   position: fixed;
