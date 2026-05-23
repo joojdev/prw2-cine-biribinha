@@ -19,13 +19,19 @@ A aplicação consiste em uma página web que consome uma API CRUD hospedada no 
 ## 👨‍💻 Autores
 
 - João Vitor Piovezan
-- Marcos Vinicius Narçay Stanquini
+- [Marcos Vinicius Narçay Stanquini](https://github.com/MarcosStanquini)
 
 ---
 
 ## 🚀 Comandos
 
 ```bash
+# Cria um .env baseado no exemplo do projeto
+cp .env.example .env
+
+# Edita o .env colocando a URL do seu backend de escolha
+nano .env
+
 # Inicia o servidor de desenvolvimento
 npm run dev
 
